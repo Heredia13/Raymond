@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page de Connexion</title>
+          <link rel="icon" type="image/vnd.icon" href="Img/école.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        .input-frame {
+            border: 2px solid #ccc;
+            border-radius: 6px;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            transition: border-color 0.3s;
+        }
+
+        .input-frame:hover {
+            border-color: #007BFF;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: none;
+            outline: none;
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 14px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .welcome-message {
+            color: green;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <!-- Logo -->
+        <img src="école.png" alt="Logo" class="logo">
+        <h1>Connexion à Raymond</h1>
+        <h5>Bienvenue, Raymond ! Ravi de te revoir, prêt(e) pour une nouvelle aventure ?
+</h5>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Nom d'utilisateur :</label>
+                <div class="input-frame">
+                    <input type="text" id="username" name="username" placeholder="Entrez votre nom d'utilisateur" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password">Mot de passe :</label>
+                <div class="input-frame">
+                    <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe" required>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="button" class="btn" onclick="validateLogin()">Se connecter</button>
+            </div>
+            <p id="errorMessage" class="error-message"></p>
+        </form>
+    </div>
+
+    <script>
+        function validateLogin() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('errorMessage');
+
+            // Reset error message
+            errorMessage.textContent = "";
+
+            // Validation des identifiants
+            if (username === "Raymond" && password === "Cano") {
+                // Rediriger vers index.html avec les informations
+                window.location.href = `index.html?username=${encodeURIComponent(username)}`;
+            } else {
+                errorMessage.textContent = "Nom d'utilisateur ou mot de passe incorrect.";
+            }
+        }
+    </script>
+</body>
+</html>

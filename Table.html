@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste de Calculs Addition +</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 50px;
+        }
+
+        .menu-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px 0;
+            padding: 10px;
+        }
+
+        .button {
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #005f73;
+        }
+
+        .correct {
+            background-color: #d4edda;
+        }
+
+        .incorrect {
+            background-color: #f8d7da;
+        }
+
+        input[type="number"] {
+            width: 50px;
+        }
+
+        #score {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Liste de Calculs</h1>
+    <h1>Addition +</h1>
+
+    <div id="score">Score: 0</div>
+
+    <ul class="menu-list">
+        <li class="menu-item">
+            3 + 2 = 
+            <input type="number" id="answer1"/>
+            <button class="button" onclick="checkAnswer(1, 5)">Répondre</button>
+        </li>
+        <li class="menu-item">
+            4 + 4 = 
+            <input type="number" id="answer2"/>
+            <button class="button" onclick="checkAnswer(2, 8)">Répondre</button>
+        </li>
+        <li class="menu-item">
+            4 + 9 = 
+            <input type="number" id="answer3"/>
+            <button class="button" onclick="checkAnswer(3, 13)">Répondre</button>
+        </li>
+        <li class="menu-item">
+            7 + 6 = 
+            <input type="number" id="answer4"/>
+            <button class="button" onclick="checkAnswer(4, 13)">Répondre</button>
+        </li>
+        <li class="menu-item">
+            3 + 7 =
+            <input type="number" id="answer5"/>
+            <button class="button" onclick="checkAnswer(5, 10)">Répondre</button>
+        </li>
+        <li class="menu-item">
+            1 + 8 =
+            <input type="number" id="answer6"/>
+            <button class="button" onclick="checkAnswer(6, 9)">Répondre</button>
+        </li>
+        <li class="menu-item">
+            9 + 4 =
+            <input type="number" id="answer7"/>
+            <button class="button" onclick="checkAnswer(7, 13)">Répondre</button>
+        </li>
+        <li class="menu-item">
+            7 + 3 = 
+            <input type="number" id="answer8"/>
+            <button class="button" onclick="checkAnswer(8, 10)">Répondre</button>
+        </li>
+        <li class="menu-item">
+            6 + 1 =
+            <input type="number" id="answer9"/>
+            <button class="button" onclick="checkAnswer(9, 7)">Répondre</button>
+        </li>
+        <li class="menu-item">
+            13 + 2 =
+            <input type="number" id="answer10"/>
+            <button class="button" onclick="checkAnswer(10, 15)">Répondre</button>
+        </li>
+        <!-- Adding 10 more questions -->
+        <li class="menu-item">
+            5 + 5 =
+            <input type="number" id="answer11"/>
+            <button class="button" onclick="checkAnswer(11, 10)">Répondre</button>
+        </li>
+        <li class="menu-item">
+            8 + 2 =
+            <input type="number" id="answer12"/>
+            <button class="button" onclick="checkAnswer(12, 10)">Répondre</button>
+        </li>
+        <li class="menu-item">
+            6 + 6 =
+            <input type="number" id="answer13"/>
+            <button class="button" onclick="checkAnswer(13, 12)">Répondre</button>
+        </li>
+        <li class="menu-item">
+            10 + 4 =
+            <input type="number" id="answer14"/>
+            <button class="button" onclick="checkAnswer(14, 14)">Répondre</button>
+        </li>
+        <li class="menu-item">
+            2 + 9 =
+            <input type="number" id="answer15"/>
+            <button class="button" onclick="checkAnswer(15, 11)">Répondre</button>
+        </li>
+        <li class="menu-item">
+            0 + 10 =
+            <input type="number" id="answer16"/>
+            <button class="button" onclick="checkAnswer(16, 10)">Répondre</button>
+        </li>
+        <li class="menu-item">
+            11 + 1 =
+            <input type="number" id="answer17"/>
+            <button class="button" onclick="checkAnswer(17, 12)">Répondre</button>
+        </li>
+        <li class="menu-item">
+            5 + 8 =
+            <input type="number" id="answer18"/>
+            <button class="button" onclick="checkAnswer(18, 13)">Répondre</button>
+        </li>
+        <li class="menu-item">
+            7 + 5 =
+            <input type="number" id="answer19"/>
+            <button class="button" onclick="checkAnswer(19, 12)">Répondre</button>
+        </li>
+        <li class="menu-item">
+            9 + 9 =
+            <input type="number" id="answer20"/>
+            <button class="button" onclick="checkAnswer(20, 18)">Répondre</button>
+        </li>
+    </ul>
+    
+    <a href="Menu.html" class="button">Retour</a>
+
+    <script>
+        let score = 0;
+
+        function checkAnswer(questionNumber, correctAnswer) {
+            const input = document.getElementById(`answer${questionNumber}`);
+            const value = parseInt(input.value, 10);
+            const item = input.parentElement;
+
+            if (value === correctAnswer) {
+                item.classList.add('correct');
+                item.classList.remove('incorrect');
+                if (!item.classList.contains('answered')) {
+                    score++;
+                    item.classList.add('answered');
+                    updateScore();
+                }
+            } else {
+                item.classList.add('incorrect');
+                item.classList.remove('correct');
+            }
+        }
+
+        function updateScore() {
+            document.getElementById('score').textContent = `Score: ${score}`;
+        }
+    </script>
+</body>
+</html>

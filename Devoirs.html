@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminaisons des verbes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #0056b3;
+        }
+
+        .phrase {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #f5f5f5;
+            cursor: pointer;
+        }
+
+        .phrase p {
+            margin: 5px 0;
+        }
+
+        strong {
+            color: #ff6f61;
+        }
+
+        em {
+            font-style: italic;
+            color: #00796b;
+        }
+
+        .explanation {
+            display: none;
+            margin-top: 10px;
+            color: #555;
+        }
+
+        .phrase:hover {
+            background: #eaeaea;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Les phrases et les terminaisons des verbes</h1>
+        <div class="phrase" onclick="toggleExplanation(this)">
+            <p><strong>Je plonge</strong> - j'é-p-e-l-l-e : J-E P-L-O-N-G-E</p>
+            <p class="explanation">Explication : Verbe du 1er groupe, terminaison <em>-e</em> (1re personne du singulier).</p>
+        </div>
+        <div class="phrase" onclick="toggleExplanation(this)">
+            <p><strong>Tu nages</strong> - j'é-p-e-l-l-e : T-U N-A-G-E-S</p>
+            <p class="explanation">Explication : Verbe du 1er groupe, terminaison <em>-es</em> (2e personne du singulier).</p>
+        </div>
+        <div class="phrase" onclick="toggleExplanation(this)">
+            <p><strong>Il mange</strong> - j'é-p-e-l-l-e : I-L M-A-N-G-E</p>
+            <p class="explanation">Explication : Verbe du 1er groupe, terminaison <em>-e</em> (3e personne du singulier).</p>
+        </div>
+        <div class="phrase" onclick="toggleExplanation(this)">
+            <p><strong>Elles picorent</strong> - j'é-p-e-l-l-e : E-L-L-E-S P-I-C-O-R-E-N-T</p>
+            <p class="explanation">Explication : Verbe du 1er groupe, terminaison <em>-ent</em> (3e personne du pluriel).</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleExplanation(element) {
+            const explanation = element.querySelector('.explanation');
+            if (explanation.style.display === 'block') {
+                explanation.style.display = 'none';
+            } else {
+                explanation.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

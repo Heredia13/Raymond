@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste avec Boutons</title>
+    <style>
+        /* Styles globaux */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            background-color: #f9f9f9;
+            color: #444;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Titre principal */
+        h1 {
+            color: #28a745;
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        /* Animation du titre */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Message */
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #555;
+        }
+
+        /* Liste des menus */
+        .menu-list {
+            list-style: none;
+            padding: 0;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        /* Chaque élément de menu */
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            border: 1px solid #e1e1e1;
+            border-radius: 8px;
+            margin: 10px 0;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateX(-50px);
+            animation: slideIn 0.8s ease-out forwards;
+        }
+
+        /* Animation pour chaque item */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Délais pour les animations */
+        .menu-item:nth-child(1) { animation-delay: 0.2s; }
+        .menu-item:nth-child(2) { animation-delay: 0.4s; }
+        .menu-item:nth-child(3) { animation-delay: 0.6s; }
+        .menu-item:nth-child(4) { animation-delay: 0.8s; }
+        .menu-item:nth-child(5) { animation-delay: 1s; }
+
+        /* Style des boutons */
+        .button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        /* Effets de hover et active */
+        .button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .button:active {
+            background-color: #004085;
+            transform: translateY(2px);
+        }
+
+        /* Bouton de déconnexion */
+        .logout {
+            background-color: #dc3545;
+        }
+
+        .logout:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Un Message pour Toi, Raymond</h1>
+    <p>
+        Chère Raymond,<br><br>
+        Sache que tu es capable de grandes choses. Chaque défi est une opportunité de grandir et de montrer ta force intérieure. Même lorsque les temps sont difficiles, souviens-toi que tu as tout ce qu'il faut pour réussir. Continue à avancer avec courage et détermination, et n'oublie pas que tu n'es jamais seul dans ce voyage.<br><br>
+        Je crois en toi !<br><br>
+        Avec tout mon soutien,
+    </p>
+
+    <ul class="menu-list">
+        <li class="menu-item">
+            Multiplication ( + )
+            <a href="Table.html" class="button">Bouton +</a>
+        </li>
+        <li class="menu-item">
+            Multiplication ( - )
+            <a href="Table2.html" class="button">Bouton -</a>
+        </li>
+        <li class="menu-item">
+            Multiplication ( x )
+            <a href="Table3.html" class="button">Bouton x</a>
+        </li>
+        <li class="menu-item">
+            Histoire
+            <a href="Histoire.html" class="button">Lire une Histoire</a>
+        </li>
+        <li class="menu-item">
+            Déconnexion
+            <a href="index.html" class="button logout">Déconnexion</a>
+        </li>
+    </ul>
+</body>
+</html>
